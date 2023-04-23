@@ -19,14 +19,12 @@ const Chat = () => {
       <MultiChatWindow
         {...chatProps}
         style={{ height: "100vh" }}
-        renderChatHeader={(chat) => (
-          <Header
-            chat={chat}
-            renderMessageForm={(props) => {
-              <StandardMessageFrom props={props} activeChat={chatProps.chat} />;
-            }}
-          />
-        )}
+        renderChatHeader={(chat) => <Header chat={chat} />}
+        renderMessageForm={(props) => {
+          return(
+            <StandardMessageFrom props={props} activeChat={chatProps.chat} />
+          )
+        }}
       />
     </div>
   );
