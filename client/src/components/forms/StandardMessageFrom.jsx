@@ -20,19 +20,19 @@ const StandardMessageFrom = ({ props, activeChat }) => {
       .replace("T", " ")
       .replace("Z", `${Math.floor(Math.random * 1000)}+00:00`);
 
-    const at = attachment ? [{blob: attachment, file: attachment.name}] : []
+    const at = attachment ? [{ blob: attachment, file: attachment.name }] : [];
 
-    const form ={
+    const form = {
       attachments: at,
       created: date,
       sender_username: props.username,
       text: message,
-      activeChatId: activeChat.id
-    }
+      activeChatId: activeChat.id,
+    };
 
-    props.onSubmit(form)
-    setMessage(""),
-    setAttachment("")
+    props.onSubmit(form);
+    setMessage("");
+    setAttachment("");
   };
 
   return (
