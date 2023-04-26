@@ -17,11 +17,12 @@ function useDebounce(value, delay) {
   return debounced;
 }
 
-const AiAssist = ({ props, activeChat }) => { //eslint-disable-line
+const AiAssist = ({ props, activeChat }) => {
+  //eslint-disable-line
   const [message, setMessage] = useState("");
   const [attachment, setAttachment] = useState("");
   const [triggerAssist, resultAssist] = usePostAiAssistMutation();
-  const [appendText, setAppendText] = useState("")
+  const [appendText, setAppendText] = useState("");
 
   const handleChange = (e) => setMessage(e.target.value);
 
@@ -52,19 +53,19 @@ const AiAssist = ({ props, activeChat }) => { //eslint-disable-line
     }
   }, [debouncedValue]); //eslint-disable-line
 
-  const handleKeyDown = (e)=>{
-    if(e.keyCode === 9 || e.keyCode===13 ){
-        e.preventDefault()
-        setMessage(`${message} ${appendText}`)
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 9 || e.keyCode === 13) {
+      e.preventDefault();
+      setMessage(`${message} ${appendText}`);
     }
-    setAppendText("")
-  }
+    setAppendText("");
+  };
 
-  useEffect(()=>{
-    if(resultAssist.data?.text){
-        setAppendText(resultAssist.data?.text)
+  useEffect(() => {
+    if (resultAssist.data?.text) {
+      setAppendText(resultAssist.data?.text);
     }
-  },[resultAssist]) //eslint-disable-line
+  }, [resultAssist]); //eslint-disable-line
 
   return (
     <MessageFormUI
