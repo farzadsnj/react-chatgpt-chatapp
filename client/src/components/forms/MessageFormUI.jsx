@@ -3,16 +3,16 @@ import {
   PaperClipIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
-import React, { useState } from "react";
+import React, { useState } from "react"; //eslint-disable-line
 import Dropzone from "react-dropzone";
 
 const MessageFormUI = ({
-  setAttachment,
-  message,
-  handleChange,
-  handleSubmit,
-  appendText,
-  handleKeyDown,
+  setAttachment, //eslint-disable-line
+  message, //eslint-disable-line
+  handleChange, //eslint-disable-line
+  handleSubmit, //eslint-disable-line
+  appendText, //eslint-disable-line
+  handleKeyDown, //eslint-disable-line
 }) => {
   const [preview, setPreview] = useState("");
 
