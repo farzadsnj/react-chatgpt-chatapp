@@ -53,19 +53,11 @@ const Login = ({ setUser, setSecret }) => {
 
         <div className="login-actions">
           {isRegister ? (
-            <button
-              type="button"
-              className="login-button"
-              onClick={handleRegister}
-            >
+            <button type="button" onClick={handleRegister}>
               Register
             </button>
           ) : (
-            <button
-              type="button"
-              className="login-button"
-              onClick={handleLogin}
-            >
+            <button type="button" onClick={handleLogin}>
               Login
             </button>
           )}
